@@ -285,7 +285,7 @@ exports.init = function(app){
 };
 ```
 
-函数内部先设置 X-Powered-By 响应头，这样在浏览器的 response header 里能看到 `Express`。接下来就是把 req 以及 res 相互引用，然后调用 setPrototypeOf 将 `app.request` 作为 httpServer 的 req 的原型对象，这样你就能这样轻松的调用上述 `req` 模块的 api 或者属性了。
+函数内部先设置 X-Powered-By 响应头，这样在浏览器的 response header 里能看到 `Express`。接下来就是把 req 以及 res 相互引用，然后调用 setPrototypeOf 将 `app.request` 作为 httpServer 的 req 的原型对象，你就能轻松的调用上述 `req` 模块的 api 或者属性了。
 
 ```js
 app.use(function(req, res, next) {
@@ -293,6 +293,6 @@ app.use(function(req, res, next) {
   // req.fresh
   // req.get()
   // req.header()
-  // 等等
+  // and so on
 })
 ```
